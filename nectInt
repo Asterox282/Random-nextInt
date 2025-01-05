@@ -1,0 +1,102 @@
+import java.util.Random;
+/**
+ * Few excercises using Random package
+ *
+ * @author IT
+ * @version 05/01/2025
+ */
+public class RandomNumber
+{
+    private Random number;
+    
+    /**
+     * construct a RandomNumber that has a random number generator
+     */
+    public RandomNumber()
+    {
+        number = new Random();
+    }
+    
+    /**
+     * return a random int between 1 and max(inclusive)
+     * @param max - the upper limit of random number to generate
+     */
+    public int randomMax(int max)
+    {
+        return number.nextInt(max) + 1;
+    }
+    
+    /**
+     * print a single random number
+     */    
+    public void oneRandom()
+    {
+        System.out.println(number.nextInt());
+    }
+    
+    /**
+     * print multiple random numbers
+     * @param howMany - on how many random integers to generate
+     */
+    public void multiRandom(int howMany)
+    {
+        for (int i = 0; i < howMany; i++) {
+            System.out.println(number.nextInt());
+        }
+    }
+    
+    /**
+     * print multiple random numbers with a given boundary
+     */
+    public void multiMax(int boundary, int numbers)
+    {
+        for (int i = 0; i < numbers; i++) {
+        System.out.println(randomMax(boundary));
+        }
+    }
+    
+    /**
+     * method which mimics throwing a dice
+     */
+    public int throwDie()
+    {
+        //return random number 0-5 and add one
+        return number.nextInt(6) + 1;
+    }
+    
+    /**
+     * return a random response "yes" "no" "maybe"
+     */
+    public String getAnswer()
+    {
+        int answer = number.nextInt(3);
+        
+        if (answer == 0) {
+            return "no";
+        }
+        
+        if (answer == 1) {
+            return "yes";
+        }
+        
+        return "maybe";
+    }
+    
+    /**
+     * returns a rock, paper or scissors randomly.
+     */
+    public String game()
+    {
+        int play = number.nextInt(3);
+        
+        if (play == 0) {
+            return "rock";
+        }
+        
+        if (play == 1) {
+            return "paper";
+        }
+        
+        return "scissors";
+    }
+}
